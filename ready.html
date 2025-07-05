@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Indexx-oss – 3D Portfolio</title>
+  <meta name="theme-color" content="#202020" />
+  <meta name="description" content="Indexx-oss 3D Portfolio – Cybersecurity, Web Design, and 3D Interactive Interfaces.">
+  <meta name="keywords" content="Indexx, Portfolio, Web Developer, Cybersecurity, Spline, 3D UI, React, CLI Tools">
+  <meta name="author" content="Indexx-oss">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+  
+   * {  
+      margin: 0; padding: 0; box-sizing: border-box;  
+    }  
+    html, body {  
+      font-family: 'Segoe UI', sans-serif;  
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);  
+      color: #fff;  
+      overflow-x: hidden;  
+      scroll-behavior: smooth;  
+    }  
+    body.noscroll {  
+      overflow: hidden;  
+    }  
+  
+nav {  
+  position: fixed;  
+  top: 0;  
+  width: 100%;  
+  background: rgba(0, 0, 0, 0.2); /* transparent dark */  
+  backdrop-filter: blur(2px);    /* blur for glass effect */  
+  -webkit-backdrop-filter: blur(10px); /* Safari support */  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+  padding: 1rem 2rem;  
+  z-index: 1000;  
+}  
+    .nav-links {  
+      display: flex;  
+      gap: 1.2rem;  
+    }  
+    nav a {  
+      text-decoration: none;  
+      color: #00f0ff;  
+      font-weight: bold;  
+      font-size: 1rem;  
+      transition: color 0.3s;  
+    }  
+    nav a:hover {  
+      color: #fff;  
+    }  
+    .menu-toggle {  
+      display: none;  
+      font-size: 2rem;  
+      color: #00f0ff;  
+      background: none;  
+      border: none;  
+      cursor: pointer;  
+    }  
+    
+  @media (max-width: 768px) {  
+  .nav-links {  
+    background: rgba(0, 0, 0, 0.3); /* match nav blur */  
+    backdrop-filter: blur(2px);  
+    -webkit-backdrop-filter: blur(10px);  
+  }  
+}  
+  
+    @media (max-width: 768px) {  
+      .menu-toggle { display: block; }  
+      .nav-links {  
+        flex-direction: column;  
+        position: absolute;  
+        top: 100%;  
+        left: 0;  
+        right: 0;  
+        background: rgba(15, 12, 41, 0.95);  
+        display: none;  
+        padding: 1rem 2rem;  
+      }  
+      .nav-links.active { display: flex; }  
+    }  
+  
+header {  
+  height: 100vh;  
+  width: 100%;  
+  position: relative;  
+  background: transparent !important;  
+}  
+  
+    .spline-container {  
+      width: 100%;  
+      height: 100%;  
+    }  
+    .spline-container iframe {  
+      width: 100%;  
+      height: 85%;  
+      border: none;  
+      transform: translateX(7%);  
+      filter: drop-shadow(0 0 40px #00f0ff50);  
+      animation: pulse 5s ease-in-out infinite;  
+    }  
+    @keyframes pulse {  
+      0%, 100% { filter: drop-shadow(0 0 20px #00f0ff60); }  
+      50% { filter: drop-shadow(0 0 60px #00f0ff); }  
+    }  
+  
+    .hero-intro {  
+      text-align: center;  
+      padding: 2rem;  
+      background: rgba(0, 0, 0, 0.4);  
+      backdrop-filter: blur(10px);  
+      border-radius: 16px;  
+      max-width: 600px;  
+      margin: -4rem auto 2rem;  
+    }  
+    .hero-intro h1 {  
+      font-size: 2.6rem;  
+      color: #00f0ff;  
+      text-shadow: 0 0 10px #00f0ff60;  
+    }  
+    .hero-intro p {  
+      color: #ccc;  
+      font-size: 1.1rem;  
+      margin-top: 0.5rem;  
+    }  
+  
+    section {  
+      padding: 4rem 2rem;  
+      max-width: 960px;  
+      margin: auto;  
+    }  
+    h2 {  
+      font-size: 2rem;  
+      color: #00f0ff;  
+      margin-bottom: 1.5rem;  
+      border-bottom: 2px solid #00f0ff60;  
+      display: inline-block;  
+      padding-bottom: 0.3rem;  
+    }  
+  
+    .skills-list, .project-list {  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 1rem;  
+    }  
+    .skills-list span {  
+      background: #1f1f2e;  
+      padding: 0.6rem 1.2rem;  
+      border-radius: 8px;  
+      color: #00f0ff;  
+      font-weight: bold;  
+    }  
+    .project-item {  
+      flex: 1 1 100%;  
+      background: #1a1a28;  
+      padding: 1rem;  
+      border-radius: 10px;  
+      transition: transform 0.3s;  
+    }  
+    .project-item:hover {  
+      transform: scale(1.02);  
+    }  
+  
+    .contact-form {  
+      display: flex;  
+      flex-direction: column;  
+      gap: 1rem;  
+    }  
+    .contact-form input, .contact-form textarea {  
+      background: #1f1f2e;  
+      border: none;  
+      color: #fff;  
+      padding: 0.8rem;  
+      border-radius: 8px;  
+    }  
+    .contact-form button {  
+      background: #00f0ff;  
+      color: #111;  
+      font-weight: bold;  
+      padding: 0.8rem;  
+      border: none;  
+      border-radius: 8px;  
+      cursor: pointer;  
+    }  
+    .contact-form button:hover {  
+      background: #00d4e0;  
+    }  
+  
+    footer {  
+      background: #111;  
+      text-align: center;  
+      padding: 2rem;  
+      font-size: 0.9rem;  
+      color: #aaa;  
+    }  
+  
+    #loader {  
+      position: fixed;  
+      inset: 0;  
+      z-index: 9999;  
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+      flex-direction: column;  
+    }  
+  
+    .skeleton-wrapper {  
+      text-align: center;  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+    }  
+    .skeleton-thumb {  
+      width: 300px;  
+      height: 160px;  
+      background: rgba(255, 255, 255, 0.05);  
+      border-radius: 12px;  
+      box-shadow: 0 0 15px #00f0ff44;  
+      margin-bottom: 1.5rem;  
+    }  
+    .skeleton-lines {  
+      width: 280px;  
+      display: flex;  
+      flex-direction: column;  
+      gap: 12px;  
+    }  
+    .line {  
+      height: 14px;  
+      background: rgba(255, 255, 255, 0.1);  
+      border-radius: 6px;  
+    }  
+    .line.short { width: 60%; }  
+    .loading-text {  
+      color: #00f0ff;  
+      margin-top: 1rem;  
+      font-size: 1.1rem;  
+      animation: blink 1.5s infinite;  
+      font-weight: bold;  
+    }  
+    @keyframes blink {  
+      0%, 100% { opacity: 1; }  
+      50% { opacity: 0.5; }  
+    }  
+    .loading-percentage {  
+      font-size: 1.5rem;  
+      color: #00f0ff;  
+      margin-top: 0.5rem;  
+      font-weight: bold;  
+      animation: pulseText 2s infinite;  
+    }  
+    @keyframes pulseText {  
+      0%, 100% { opacity: 1; transform: scale(1); }  
+      50% { opacity: 0.7; transform: scale(1.05); }  
+    }  
+    
+  @media (max-width: 500px) {  
+  .spline-container iframe {  
+    transform: translateX(0%);  
+    scale: 0.92;  
+  }  
+}  
+    
+  
+    /* [unchanged CSS code from your original — omitted for brevity] */
+    /* Keep your existing style code here */
+  </style>
+</head>
+<body class="noscroll">
+
+  <!-- NAV -->
+  <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="spline-container">
+      <iframe loading="lazy" title="3D Robot" src="https://my.spline.design/genkubgreetingrobot-Kh7zk0pI81ycZdzxtDAa1thz/"></iframe>
+    </div>
+  </header>
+
+  <div class="hero-intro">
+    <h1>𝐼𝓃𝒹𝑒𝓍𝓍 -☯𝓈𝓈</h1>
+    <p>3D Web Developer | Creative Technologist | UI/UX Designer</p>
+  </div>
+
+  <section id="about"><h2>About Me</h2><p>I'm a passionate developer blending cybersecurity, full-stack web, and 3D UI to craft digital experiences that break convention and push creative boundaries.</p></section>
+
+  <section id="skills"><h2>Skills</h2>
+    <div class="skills-list">
+      <span>HTML / CSS / JS</span><span>React + Tailwind</span><span>Three.js / Spline</span>
+      <span>Node.js / MongoDB</span><span>Python CLI Tools</span><span>Cybersecurity (SQLi, XSS)</span>
+      <span>Terminal UI / Glitch Design</span><span>OAuth Integration</span><span>GSAP / WebGL</span>
+    </div>
+  </section>
+
+  <section id="projects"><h2>Projects</h2>
+    <div class="project-list">
+      <div class="project-item"><h3>⚔️ Hacker-Themed Browser</h3><p>RAM-only browser UI with IP display, glitch effects, and DuckDuckGo integration.</p></div>
+      <div class="project-item"><h3>🎴 Flip Card Voting Showcase</h3><p>3D animated card deck with sounds, sparkles, and responsive layout.</p></div>
+      <div class="project-item"><h3>🤖 AI-Based Self-Healing CLI Tool</h3><p>Python-based terminal system that detects and heals server intrusions in real time.</p></div>
+      <div class="project-item"><h3>🎨 3D Portfolio Integration</h3><p>WebGL + Spline 3D scene with shadows, interactions and animations.</p></div>
+    </div>
+  </section>
+
+  <section id="experience"><h2>Experience</h2>
+    <p><strong>Creative Technologist & Cyber Dev</strong><br/>• Built terminal-style hacker websites<br/>• Developed AI CLI tools for self-healing<br/>• Designed mobile-first web apps<br/>• Explored OSCP-level techniques<br/>• Crafted immersive scenes in Spline and WebGL</p>
+  </section>
+
+  <section id="contact"><h2>Contact</h2>
+    <form class="contact-form" id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>&copy; 2025 Indexx-oss. Made with 💙, caffeine, and 3D.</footer>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="skeleton-wrapper">
+      <div class="skeleton-thumb shimmer"></div>
+      <div class="skeleton-lines">
+        <div class="line shimmer"></div>
+        <div class="line short shimmer"></div>
+      </div>
+      <p class="loading-text">Loading Indexx-oss Portfolio...</p>
+      <p class="loading-percentage" id="loading-percentage">0%</p>
+    </div>
+  </div>
+
+  <!-- 🔊 AUDIO VOICE MESSAGE -->
+  <audio id="voice-welcome" preload="auto">
+    <source src="welcome-voice.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- JS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init("Ag_NHXbM7jvUXK2G6");
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_6zd4xfv', 'template_heikohd', this)
+        .then(() => {
+          alert('✅ Message sent successfully!');
+          this.reset();
+        })
+        .catch(err => alert('❌ Error: ' + JSON.stringify(err)));
+    });
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link =>
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      })
+    );
+
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      const percentageEl = document.getElementById("loading-percentage");
+      let percent = 0;
+
+      const loadingInterval = setInterval(() => {
+        if (percent < 100) {
+          percent++;
+          percentageEl.textContent = percent + "%";
+        } else {
+          clearInterval(loadingInterval);
+        }
+      }, 15);
+
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.style.display = "none";
+          document.body.classList.remove("noscroll");
+        }, 600);
+      }, 1500);
+    });
+
+    // ▶️ PLAY VOICE AFTER USER FIRST TAP (to follow browser rules)
+    document.body.addEventListener('click', () => {
+      const audio = document.getElementById("voice-welcome");
+      if (audio && audio.paused) audio.play().catch(() => {});
+    }, { once: true });
+  
+  
+  </script>
+</body>
+</html>
