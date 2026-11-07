@@ -1,411 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Indexx-oss – 3D Portfolio</title>
-  <meta name="theme-color" content="#202020" />
-  <meta name="description" content="Indexx-oss 3D Portfolio – Cybersecurity, Web Design, and 3D Interactive Interfaces.">
-  <meta name="keywords" content="Indexx, Portfolio, Web Developer, Cybersecurity, Spline, 3D UI, React, CLI Tools">
-  <meta name="author" content="Indexx-oss">
-  <link rel="icon" href="favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mohit Sharma | Developer & Security Engineer</title>
+<meta name="description" content="Mohit Sharma from Faridabad: full-stack developer and security engineer who builds friendly software and keeps it safe.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eaf6f3;--bg2:#fdf3dc;--ink:#14323a;--mute:#4d6b72;--card:rgba(255,255,255,.72);--line:rgba(20,50,58,.12);--acc:#0e7a69;--acc-ink:#fff;--sun:#ffb84d;--lav:#8f86e8;--orb1:#fff3b0;--orb2:#ffb84d;--orb3:#ff8a5c;
+--d:'Fraunces',Georgia,serif;--b:'Nunito','Segoe UI',system-ui,sans-serif;color-scheme:light}
+body[data-t=dark]{--bg:#1b2766;--bg2:#4a3b9b;--ink:#f4f5ff;--mute:#c9d0f8;--card:rgba(255,255,255,.1);--line:rgba(255,255,255,.22);--acc:#ffd27a;--acc-ink:#241c00;--orb1:#ffffff;--orb2:#d9dcff;--orb3:#8f86e8;color-scheme:dark}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{background:var(--bg);color:var(--ink);font:400 1.08rem/1.7 var(--b);transition:background .8s,color .8s;overflow-x:hidden}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:8px}a{color:inherit}
+h1,h2,h3{font-family:var(--d);line-height:1.08;letter-spacing:-.02em}
+.w{max-width:1100px;margin:auto;padding:0 1.5rem}section{padding:5.5rem 0}
+h2{font-size:clamp(2rem,4.6vw,3.3rem);font-weight:800;margin-bottom:.8rem}.lead{color:var(--mute);max-width:52ch}
+.sky{position:fixed;inset:0;z-index:-2;background:linear-gradient(160deg,#eaf6f3,#fdf3dc)}.sky.n{background:radial-gradient(circle at 72% 24%,rgba(196,210,255,.4),transparent 50%),linear-gradient(160deg,#1b2766,#4a3b9b);opacity:0;transition:opacity 1s}.sky.n::after{content:'';position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 90px 120px,#fff,transparent),radial-gradient(2px 2px at 160px 60px,#dfe6ff,transparent),radial-gradient(1px 1px at 130px 170px,#fff,transparent);background-size:200px 200px;animation:tw 4s ease-in-out infinite alternate}@keyframes tw{from{opacity:.35}to{opacity:1}}body[data-t=dark] .b1{background:#9db2ff}body[data-t=dark] .sky.n{opacity:1}
+.cp{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}blockquote{font:600 italic clamp(1.5rem,3.2vw,2.3rem)/1.25 var(--d);margin:1rem 0 2rem;padding-left:1.2rem;border-left:4px solid var(--acc)}
+.pri{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.pri h3{font-size:1.3rem;color:var(--acc);margin-bottom:.3rem}.pri p{color:var(--mute);font-size:.96rem}.sysw{justify-self:center;text-align:center}.sys{--S:min(80vw,340px);position:relative;width:var(--S);aspect-ratio:1;margin:auto}.rg{position:absolute;inset:6%;border:2px dashed var(--mute);border-radius:50%;opacity:.55}
+.me{position:absolute;inset:34%;border-radius:50%;background:color-mix(in srgb,var(--acc) 22%,transparent);border:3px solid var(--acc);display:grid;place-items:center;font:800 1.8rem var(--d);animation:breathe 7s ease-in-out infinite}
+.sat{position:absolute;left:50%;top:50%;width:5rem;height:2.3rem;margin:-1.15rem 0 0 -2.5rem;display:grid;place-items:center;border-radius:99px;background:var(--acc);color:var(--acc-ink);font-weight:800;font-size:.88rem;box-shadow:0 6px 18px -6px var(--acc);transform:rotate(var(--a)) translateX(calc(var(--S)*.44)) rotate(calc(var(--a)*-1));animation:orbit 24s linear infinite}
+@keyframes orbit{to{transform:rotate(calc(var(--a) + 360deg)) translateX(calc(var(--S)*.44)) rotate(calc((var(--a) + 360deg)*-1))}}
+.cp svg{width:100%;max-width:340px;justify-self:center}.core{transform-origin:160px 160px;animation:breathe 7s ease-in-out infinite}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.4;pointer-events:none;z-index:-1;animation:drift 18s ease-in-out infinite alternate}
+.b1{width:340px;height:340px;background:var(--sun);top:8%;left:-6%}.b2{width:400px;height:400px;background:var(--lav);bottom:5%;right:-8%;animation-delay:-8s}
+@keyframes drift{to{transform:translate(50px,-40px) scale(1.1)}}
+nav{position:fixed;inset:0 0 auto;z-index:20;background:color-mix(in srgb,var(--bg) 70%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:3.8rem;gap:1rem}
+.lg{font:800 1.25rem var(--d);text-decoration:none}.lg i{color:var(--acc);font-style:normal}
+.ln{display:flex;gap:1.5rem;font-weight:600;font-size:.95rem}.ln a{text-decoration:none;color:var(--mute)}.ln a:hover{color:var(--ink)}
+.sw{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:3px}
+.sw button{font:800 .85rem var(--b);background:none;border:0;color:var(--mute);padding:.4rem 1rem;border-radius:99px;cursor:pointer;transition:all .3s}
+.sw button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mn{display:none;background:var(--card);border:1px solid var(--line);color:var(--ink);width:2.4rem;height:2.4rem;border-radius:12px;font-size:1.2rem}
+.hero{min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding-top:6rem;padding-bottom:3rem}
+.hero h1{font-size:clamp(3rem,7.6vw,6rem);font-weight:800}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--acc)}
+.hero p{margin:1.4rem 0 1.8rem;max-width:44ch;color:var(--mute);font-size:1.15rem}
+.hero .in{animation:rise 1s cubic-bezier(.2,.8,.2,1) both}.hero .in:nth-child(2){animation-delay:.15s}.hero .in:nth-child(3){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}.bt{text-decoration:none;font-weight:800;padding:.8rem 1.4rem;border-radius:99px;border:2px solid var(--line);background:var(--card);transition:transform .25s,border-color .25s}
+.bt:hover{transform:translateY(-3px);border-color:var(--acc)}.bt.p{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.orbw{display:grid;place-items:center;text-align:center}
+.orb{position:relative;width:min(70vw,360px);aspect-ratio:1;border:0;background:none;border-radius:50%;cursor:pointer;animation:breathe 7s ease-in-out infinite}
+.sun,.moon{position:absolute;inset:0;border-radius:50%;transition:transform 1.3s cubic-bezier(.3,.8,.2,1),opacity 1.1s}
+.sun{background:radial-gradient(circle at 35% 30%,#fff3b0,#ffb84d 55%,#ff8a5c);box-shadow:0 0 100px 14px rgba(255,184,77,.55)}
+.moon{background:radial-gradient(circle at 30% 36%,rgba(125,130,160,.4) 0 9%,transparent 10%),radial-gradient(circle at 63% 27%,rgba(125,130,160,.35) 0 6%,transparent 7%),radial-gradient(circle at 70% 63%,rgba(125,130,160,.4) 0 12%,transparent 13%),radial-gradient(circle at 38% 73%,rgba(125,130,160,.3) 0 7%,transparent 8%),radial-gradient(circle at 52% 52%,rgba(125,130,160,.22) 0 4%,transparent 5%),radial-gradient(circle at 34% 30%,#fff,#eceefa 55%,#b4b9dc);box-shadow:0 0 100px 26px rgba(200,212,255,.6),inset -24px -18px 50px rgba(80,88,140,.4);transform:translateY(55%) scale(.6);opacity:0}
+body[data-t=dark] .sun{transform:translateY(55%) scale(.6);opacity:0}body[data-t=dark] .moon{transform:none;opacity:1}
+@keyframes breathe{50%{transform:scale(1.06)}}
+.orb::before,.orb::after{content:"";position:absolute;inset:-9%;border-radius:50%;border:1.5px dashed var(--line);animation:spin 40s linear infinite}.orb::after{inset:-20%;animation-duration:70s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orb.rp{animation:breathe 7s ease-in-out infinite,pop .6s}@keyframes pop{40%{filter:brightness(1.25)}}
+.say{margin-top:2.2rem;font:600 italic 1.25rem var(--d);min-height:3.2rem;max-width:26ch;color:var(--ink)}
+.hint{font-size:.8rem;color:var(--mute)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.trio div{padding:2.2rem 1.8rem;background:var(--card);border:1px solid var(--line)}
+.trio div:nth-child(1){border-radius:60px 24px 60px 24px}.trio div:nth-child(2){border-radius:24px 60px 24px 60px;margin-top:2rem}.trio div:nth-child(3){border-radius:60px 60px 24px 60px}
+.trio span{font-size:2rem}.trio h3{font-size:1.6rem;margin:.6rem 0}.trio p{color:var(--mute);font-size:1rem}.trio small{display:block;margin-top:.9rem;color:var(--acc);font-weight:800}
+.vid{display:grid;grid-template-columns:1.8fr 1fr;gap:2.5rem;align-items:center}
+.vf{aspect-ratio:16/9;border-radius:36px;overflow:hidden;box-shadow:0 30px 70px -30px var(--acc);border:6px solid var(--card)}.vf iframe{width:100%;height:100%;border:0}
+.vid h2{font-size:2.2rem}.vid p{color:var(--mute);margin-bottom:1rem}
+.pb{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2.5rem}
+.pb article{background:var(--card);border:1px solid var(--line);padding:2rem;display:flex;flex-direction:column;gap:.7rem;transition:opacity .5s,transform .3s}
+.pb article:nth-child(2n){margin-top:3rem}.pb article:hover{transform:translateY(-4px)}.pb article.dim{opacity:.35}
+.pb article:nth-child(1){border-radius:70px 28px 70px 28px}.pb article:nth-child(2){border-radius:28px 70px 28px 70px}.pb article:nth-child(3){border-radius:28px 70px 70px 28px}.pb article:nth-child(4){border-radius:70px 28px 28px 70px}.pb article:nth-child(5){border-radius:50px}
+.pb .k{font-weight:800;font-size:.85rem;color:var(--acc)}.pb h3{font-size:1.9rem}.pb p{color:var(--mute);font-size:1rem}
+.ch{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:auto;padding-top:.5rem}.ch span{font-size:.78rem;font-weight:600;background:color-mix(in srgb,var(--acc) 14%,transparent);border-radius:99px;padding:.2rem .75rem}
+.pb a{color:var(--acc);font-weight:800}.wn{font-size:.8rem;color:var(--mute);font-style:italic}
+.path{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin:2.5rem 0 2rem}
+.path::before{content:"";position:absolute;top:1.15rem;left:5%;right:5%;border-top:3px dotted var(--acc);opacity:.6}
+.path div{position:relative;padding-top:3.2rem}.path div::before{content:"";position:absolute;top:.4rem;left:0;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px color-mix(in srgb,var(--acc) 22%,transparent)}
+.path h3{font-size:1.3rem;margin-bottom:.3rem}.path p{color:var(--mute);font-size:.95rem}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2rem}
+.tools h3{font-size:1.25rem;margin-bottom:.7rem}.tools ul{list-style:none;display:grid;gap:.35rem}.tools li{color:var(--mute);font-size:.96rem;padding-left:1.2rem;position:relative}
+.tools li::before{content:"✿";position:absolute;left:0;color:var(--acc);font-size:.8rem;top:.15rem}.tools b{color:var(--ink)}
+.edu{margin-top:3rem;display:flex;gap:1rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:1.2rem 2rem}.edu span{font-size:2rem}.edu p{color:var(--mute);font-size:.95rem}
+.ct{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}
+.em{display:inline-flex;align-items:center;gap:.6rem;max-width:100%;font:800 clamp(1rem,2.3vw,1.45rem)/1.2 var(--d);text-decoration:none;overflow-wrap:anywhere;margin:1.6rem 0 1.4rem;padding:.9rem 1.5rem;border-radius:99px;background:var(--card);border:2px solid var(--acc);color:var(--ink);transition:transform .25s,background .25s}.em::before{content:'✉';color:var(--acc)}.em:hover{transform:translateY(-3px);background:color-mix(in srgb,var(--acc) 18%,transparent)}
+.rb{height:360px;border-radius:50px 20px 50px 20px;overflow:hidden;border:6px solid var(--card)}.rb iframe{width:100%;height:100%;border:0}
+form{display:grid;gap:.7rem;margin-top:1.5rem;max-width:500px}
+input[type=text],input[type=email],textarea{font:inherit;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:20px;padding:.8rem 1.1rem;width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--acc)}form button{font:800 1rem var(--b);background:var(--acc);color:var(--acc-ink);border:0;border-radius:99px;padding:.9rem;cursor:pointer}
+footer{padding:2.5rem 0;text-align:center;color:var(--mute);font-size:.92rem}
+@media(max-width:860px){.mn{display:block}.ln{display:none;position:absolute;top:3.8rem;left:0;right:0;flex-direction:column;background:var(--bg);padding:1.2rem 1.5rem}.ln.o{display:flex}
+.hero,.vid,.ct,.pb,.trio,.cp,.pri{grid-template-columns:1fr}.trio div:nth-child(2),.pb article:nth-child(2n){margin-top:0}.path,.tools{grid-template-columns:1fr 1fr}.path::before{display:none}.edu{border-radius:30px}}
+@media(max-width:520px){.path,.tools{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head>
+<body data-t="light">
+<div class="sky"></div><div class="sky n"></div><div class="blob b1"></div><div class="blob b2"></div>
+<nav><div class="w"><a class="lg" href="#top">mohit<i>.sh</i></a>
+<div class="ln" id="ln"><a href="#work">Projects</a><a href="#compass">What I control</a><a href="#tools">Toolbox</a><a href="#writing">Writing</a><a href="#contact">Contact</a></div>
+<div class="sw" role="group" aria-label="Colour theme"><button aria-pressed="true" data-t="light">☀ Light</button><button aria-pressed="false" data-t="dark">☾ Dark</button></div>
+<button class="mn" aria-label="Menu" onclick="ln.classList.toggle('o')">☰</button></div></nav>
+<main id="top">
+<header class="w hero"><div>
+<h1 class="in">Calm code, <em>strong locks.</em></h1>
+<p class="in">Hi, I’m Mohit, a developer from Faridabad. I make apps people enjoy using, then check every door twice so they stay safe.</p>
+<div class="cta in"><a class="bt p" href="#contact">Say hello</a><a class="bt" href="#work">See my work</a><a class="bt" href="https://github.com/index-oss" target="_blank" rel="noopener">GitHub</a><a class="bt" href="assets/Resume.pdf">Resume (PDF)</a></div></div>
+<div class="orbw"><button class="orb" id="orb" aria-label="Show a new kind note"><span class="sun"></span><span class="moon"></span></button><p class="say" id="say" aria-live="polite">Small steps ship big things.</p><span class="hint">Tap the glow for a thought. Try the ☾ Dark switch.</span></div></header>
 
-  <style>
-  
-   * {  
-      margin: 0; padding: 0; box-sizing: border-box;  
-    }  
-    html, body {  
-      font-family: 'Segoe UI', sans-serif;  
-      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);  
-      color: #fff;  
-      overflow-x: hidden;  
-      scroll-behavior: smooth;  
-    }  
-    body.noscroll {  
-      overflow: hidden;  
-    }  
-  
-nav {  
-  position: fixed;  
-  top: 0;  
-  width: 100%;  
-  background: rgba(0, 0, 0, 0.2); /* transparent dark */  
-  backdrop-filter: blur(2px);    /* blur for glass effect */  
-  -webkit-backdrop-filter: blur(10px); /* Safari support */  
-  display: flex;  
-  justify-content: space-between;  
-  align-items: center;  
-  padding: 1rem 2rem;  
-  z-index: 1000;  
-}  
-    .nav-links {  
-      display: flex;  
-      gap: 1.2rem;  
-    }  
-    nav a {  
-      text-decoration: none;  
-      color: #00f0ff;  
-      font-weight: bold;  
-      font-size: 1rem;  
-      transition: color 0.3s;  
-    }  
-    nav a:hover {  
-      color: #fff;  
-    }  
-    .menu-toggle {  
-      display: none;  
-      font-size: 2rem;  
-      color: #00f0ff;  
-      background: none;  
-      border: none;  
-      cursor: pointer;  
-    }  
-    
-  @media (max-width: 768px) {  
-  .nav-links {  
-    background: rgba(0, 0, 0, 0.3); /* match nav blur */  
-    backdrop-filter: blur(2px);  
-    -webkit-backdrop-filter: blur(10px);  
-  }  
-}  
-  
-    @media (max-width: 768px) {  
-      .menu-toggle { display: block; }  
-      .nav-links {  
-        flex-direction: column;  
-        position: absolute;  
-        top: 100%;  
-        left: 0;  
-        right: 0;  
-        background: rgba(15, 12, 41, 0.95);  
-        display: none;  
-        padding: 1rem 2rem;  
-      }  
-      .nav-links.active { display: flex; }  
-    }  
-  
-header {  
-  height: 100vh;  
-  width: 100%;  
-  position: relative;  
-  background: transparent !important;  
-}  
-  
-    .spline-container {  
-      width: 100%;  
-      height: 100%;  
-    }  
-    .spline-container iframe {  
-      width: 100%;  
-      height: 85%;  
-      border: none;  
-      transform: translateX(7%);  
-      filter: drop-shadow(0 0 40px #00f0ff50);  
-      animation: pulse 5s ease-in-out infinite;  
-    }  
-    @keyframes pulse {  
-      0%, 100% { filter: drop-shadow(0 0 20px #00f0ff60); }  
-      50% { filter: drop-shadow(0 0 60px #00f0ff); }  
-    }  
-  
-    .hero-intro {  
-      text-align: center;  
-      padding: 2rem;  
-      background: rgba(0, 0, 0, 0.4);  
-      backdrop-filter: blur(10px);  
-      border-radius: 16px;  
-      max-width: 600px;  
-      margin: -4rem auto 2rem;  
-    }  
-    .hero-intro h1 {  
-      font-size: 2.6rem;  
-      color: #00f0ff;  
-      text-shadow: 0 0 10px #00f0ff60;  
-    }  
-    .hero-intro p {  
-      color: #ccc;  
-      font-size: 1.1rem;  
-      margin-top: 0.5rem;  
-    }  
-  
-    section {  
-      padding: 4rem 2rem;  
-      max-width: 960px;  
-      margin: auto;  
-    }  
-    h2 {  
-      font-size: 2rem;  
-      color: #00f0ff;  
-      margin-bottom: 1.5rem;  
-      border-bottom: 2px solid #00f0ff60;  
-      display: inline-block;  
-      padding-bottom: 0.3rem;  
-    }  
-  
-    .skills-list, .project-list {  
-      display: flex;  
-      flex-wrap: wrap;  
-      gap: 1rem;  
-    }  
-    .skills-list span {  
-      background: #1f1f2e;  
-      padding: 0.6rem 1.2rem;  
-      border-radius: 8px;  
-      color: #00f0ff;  
-      font-weight: bold;  
-    }  
-    .project-item {  
-      flex: 1 1 100%;  
-      background: #1a1a28;  
-      padding: 1rem;  
-      border-radius: 10px;  
-      transition: transform 0.3s;  
-    }  
-    .project-item:hover {  
-      transform: scale(1.02);  
-    }  
-  
-    .contact-form {  
-      display: flex;  
-      flex-direction: column;  
-      gap: 1rem;  
-    }  
-    .contact-form input, .contact-form textarea {  
-      background: #1f1f2e;  
-      border: none;  
-      color: #fff;  
-      padding: 0.8rem;  
-      border-radius: 8px;  
-    }  
-    .contact-form button {  
-      background: #00f0ff;  
-      color: #111;  
-      font-weight: bold;  
-      padding: 0.8rem;  
-      border: none;  
-      border-radius: 8px;  
-      cursor: pointer;  
-    }  
-    .contact-form button:hover {  
-      background: #00d4e0;  
-    }  
-  
-    footer {  
-      background: #111;  
-      text-align: center;  
-      padding: 2rem;  
-      font-size: 0.9rem;  
-      color: #aaa;  
-    }  
-  
-    #loader {  
-      position: fixed;  
-      inset: 0;  
-      z-index: 9999;  
-      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      flex-direction: column;  
-    }  
-  
-    .skeleton-wrapper {  
-      text-align: center;  
-      display: flex;  
-      flex-direction: column;  
-      align-items: center;  
-    }  
-    .skeleton-thumb {  
-      width: 300px;  
-      height: 160px;  
-      background: rgba(255, 255, 255, 0.05);  
-      border-radius: 12px;  
-      box-shadow: 0 0 15px #00f0ff44;  
-      margin-bottom: 1.5rem;  
-    }  
-    .skeleton-lines {  
-      width: 280px;  
-      display: flex;  
-      flex-direction: column;  
-      gap: 12px;  
-    }  
-    .line {  
-      height: 14px;  
-      background: rgba(255, 255, 255, 0.1);  
-      border-radius: 6px;  
-    }  
-    .line.short { width: 60%; }  
-    .loading-text {  
-      color: #00f0ff;  
-      margin-top: 1rem;  
-      font-size: 1.1rem;  
-      animation: blink 1.5s infinite;  
-      font-weight: bold;  
-    }  
-    @keyframes blink {  
-      0%, 100% { opacity: 1; }  
-      50% { opacity: 0.5; }  
-    }  
-    .loading-percentage {  
-      font-size: 1.5rem;  
-      color: #00f0ff;  
-      margin-top: 0.5rem;  
-      font-weight: bold;  
-      animation: pulseText 2s infinite;  
-    }  
-    @keyframes pulseText {  
-      0%, 100% { opacity: 1; transform: scale(1); }  
-      50% { opacity: 0.7; transform: scale(1.05); }  
-    }  
-    
-  @media (max-width: 500px) {  
-  .spline-container iframe {  
-    transform: translateX(0%);  
-    scale: 0.92;  
-  }  
-}  
-    
-  
-    /* [unchanged CSS code from your original — omitted for brevity] */
-    /* Keep your existing style code here */
-  </style>
-</head>
-<body class="noscroll">
+<section id="help"><div class="w"><h2>Three ways I help</h2><p class="lead">No heavy jargon here. This is what the work looks like in everyday words.</p>
+<div class="trio"><div><span>🌱</span><h3>I make things</h3><p>Websites and apps, from the screen you tap to the database behind it. Tell me the idea and I’ll grow it into something real.</p><small>React · Python · Supabase · Tailwind</small></div>
+<div><span>🛡️</span><h3>I keep things safe</h3><p>I look at software like a curious visitor who tries every handle, so the weak spots get fixed early, with clear notes on how.</p><small>Pen-testing · scanning · log reading</small></div>
+<div><span>✨</span><h3>I add helpful AI</h3><p>Quiet, useful automation: servers that look after themselves, study tools that save time, features real people actually use.</p><small>GPT-4o · OCR · LLM tools</small></div></div></div></section>
 
-  <!-- NAV -->
-  <nav>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<section id="hello"><div class="w vid"><div class="vf"><iframe loading="lazy" title="Mohit Sharma introduces himself" src="https://www.youtube-nocookie.com/embed/AWZSApkX7Tg?rel=0&modestbranding=1" allowfullscreen></iframe></div>
+<div><h2>Prefer to listen?</h2><p>A short video where I tell you who I am, which projects make me proudest, and the kind of team I’d love to join.</p><a class="bt" href="https://www.youtube.com/@OffSecMohit" target="_blank" rel="noopener">Visit my YouTube channel</a></div></div></section>
 
-  <!-- HEADER -->
-  <header>
-    <div class="spline-container">
-      <iframe loading="lazy" title="3D Robot" src="https://my.spline.design/genkubgreetingrobot-Kh7zk0pI81ycZdzxtDAa1thz/"></iframe>
-    </div>
-  </header>
+<section id="compass"><div class="w cp"><div><h2>What I can control</h2>
+<blockquote>I can’t steer the outcome, only my next action. So I look after my time, my energy and my space.</blockquote>
+<div class="pri"><div><h3>Time</h3><p>A few focused hours beat a whole day of noise.</p></div><div><h3>Energy</h3><p>Rest is part of the work, not a break from it.</p></div><div><h3>Space</h3><p>A tidy desk and a quiet mind leave room for good ideas.</p></div></div></div>
+<div class="sysw"><div class="sys" role="img" aria-label="Me at the centre, with time, energy and space orbiting around me"><div class="rg"></div><div class="me">Me</div><span class="sat" style="--a:0deg;animation-delay:0s">Time</span><span class="sat" style="--a:120deg;animation-delay:-8s">Energy</span><span class="sat" style="--a:240deg;animation-delay:-16s">Space</span></div><p class="hint">Inside the ring is what I can steer. Outside it: results, opinions, luck.</p></div></div></section>
 
-  <div class="hero-intro">
-    <h1>𝐼𝓃𝒹𝑒𝓍𝓍 -☯𝓈𝓈</h1>
-    <p>3D Web Developer | Creative Technologist | UI/UX Designer</p>
-  </div>
+<section id="work"><div class="w"><h2>Things I’ve made</h2><p class="lead">Every one has real code behind it.</p><div class="pb" id="pb"></div>
+<p style="margin-top:2.5rem"><a href="https://github.com/index-oss" target="_blank" rel="noopener" style="color:var(--acc);font-weight:800">More on GitHub</a></p></div></section>
 
-  <section id="about"><h2>About Me</h2><p>I'm a passionate developer blending cybersecurity, full-stack web, and 3D UI to craft digital experiences that break convention and push creative boundaries.</p></section>
+<section id="story"><div class="w"><h2>How one finding unfolds</h2><p class="lead">My writeups follow the same gentle path, from curiosity to a safer product.</p>
+<div class="path"><div><h3>Notice</h3><p>Spot the weak point through careful discovery.</p></div><div><h3>Prove</h3><p>Show it’s real with a permitted proof of concept.</p></div><div><h3>Measure</h3><p>Explain how much it could matter.</p></div><div><h3>Mend</h3><p>Hand over clear steps to fix it.</p></div></div>
+<a class="bt" href="#contact">Ask for the full writeup</a></div></section>
 
-  <section id="skills"><h2>Skills</h2>
-    <div class="skills-list">
-      <span>HTML / CSS / JS</span><span>React + Tailwind</span><span>Three.js / Spline</span>
-      <span>Node.js / MongoDB</span><span>Python CLI Tools</span><span>Cybersecurity (SQLi, XSS)</span>
-      <span>Terminal UI / Glitch Design</span><span>OAuth Integration</span><span>GSAP / WebGL</span>
-    </div>
-  </section>
+<section id="tools"><div class="w"><h2>My toolbox</h2><p class="lead">Things I use on real projects, not just ones I’ve read about.</p>
+<div class="tools"><div><h3>Languages</h3><ul><li><b>Python</b> for scripts, automation and security tools</li><li><b>JavaScript</b> for the browser side</li><li><b>C</b> to understand how machines think</li></ul></div>
+<div><h3>Web</h3><ul><li><b>React</b> for lively interfaces</li><li><b>Tailwind CSS</b> for quick, tidy styling</li><li><b>Supabase</b> for data and live updates</li><li><b>Git and GitHub</b> to keep history safe</li></ul></div>
+<div><h3>Security</h3><ul><li>Automated recon and enumeration</li><li>Scanning with readable reports</li><li>Spotting odd patterns in logs</li><li>CTF-style practice</li></ul></div>
+<div><h3>Applied AI</h3><ul><li><b>GPT-4o family</b> inside real products</li><li>OCR and document processing</li><li>Features built around real users</li></ul></div></div>
+<div class="edu"><span>🎓</span><div><h3 style="font-size:1.3rem">B.Tech, Computer Engineering</h3><p>JC Bose University of Science &amp; Technology (YMCA), Faridabad · 2024 to 2028</p></div></div></div></section>
 
-  <section id="projects"><h2>Projects</h2>
-    <div class="project-list">
-      <div class="project-item"><h3>⚔️ Hacker-Themed Browser</h3><p>RAM-only browser UI with IP display, glitch effects, and DuckDuckGo integration.</p></div>
-      <div class="project-item"><h3>🎴 Flip Card Voting Showcase</h3><p>3D animated card deck with sounds, sparkles, and responsive layout.</p></div>
-      <div class="project-item"><h3>🤖 AI-Based Self-Healing CLI Tool</h3><p>Python-based terminal system that detects and heals server intrusions in real time.</p></div>
-      <div class="project-item"><h3>🎨 3D Portfolio Integration</h3><p>WebGL + Spline 3D scene with shadows, interactions and animations.</p></div>
-    </div>
-  </section>
+<section id="writing"><div class="w"><h2>Words I write</h2><p class="lead">I also write articles on Medium, sharing what I learn about building software, staying secure, and thinking clearly along the way.</p>
+<div class="cta" style="margin-top:1.5rem"><a class="bt p" id="md">Read my articles on Medium</a></div></div></section>
 
-  <section id="experience"><h2>Experience</h2>
-    <p><strong>Creative Technologist & Cyber Dev</strong><br/>• Built terminal-style hacker websites<br/>• Developed AI CLI tools for self-healing<br/>• Designed mobile-first web apps<br/>• Explored OSCP-level techniques<br/>• Crafted immersive scenes in Spline and WebGL</p>
-  </section>
-
-  <section id="contact"><h2>Contact</h2>
-    <form class="contact-form" id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>&copy; 2025 Indexx-oss. Made with 💙, caffeine, and 3D.</footer>
-
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="skeleton-wrapper">
-      <div class="skeleton-thumb shimmer"></div>
-      <div class="skeleton-lines">
-        <div class="line shimmer"></div>
-        <div class="line short shimmer"></div>
-      </div>
-      <p class="loading-text">Loading Indexx-oss Portfolio...</p>
-      <p class="loading-percentage" id="loading-percentage">0%</p>
-    </div>
-  </div>
-
-  <!-- 🔊 AUDIO VOICE MESSAGE -->
-  <audio id="voice-welcome" preload="auto">
-    <source src="welcome-voice.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- JS -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    emailjs.init("Ag_NHXbM7jvUXK2G6");
-
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      emailjs.sendForm('service_6zd4xfv', 'template_heikohd', this)
-        .then(() => {
-          alert('✅ Message sent successfully!');
-          this.reset();
-        })
-        .catch(err => alert('❌ Error: ' + JSON.stringify(err)));
-    });
-
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-
-    document.querySelectorAll('.nav-links a').forEach(link =>
-      link.addEventListener('click', () => {
-        document.getElementById('navLinks').classList.remove('active');
-      })
-    );
-
-    window.addEventListener("load", () => {
-      const loader = document.getElementById("loader");
-      const percentageEl = document.getElementById("loading-percentage");
-      let percent = 0;
-
-      const loadingInterval = setInterval(() => {
-        if (percent < 100) {
-          percent++;
-          percentageEl.textContent = percent + "%";
-        } else {
-          clearInterval(loadingInterval);
-        }
-      }, 15);
-
-      setTimeout(() => {
-        loader.style.opacity = "0";
-        setTimeout(() => {
-          loader.style.display = "none";
-          document.body.classList.remove("noscroll");
-        }, 600);
-      }, 1500);
-    });
-
-    // ▶️ PLAY VOICE AFTER USER FIRST TAP (to follow browser rules)
-    document.body.addEventListener('click', () => {
-      const audio = document.getElementById("voice-welcome");
-      if (audio && audio.paused) audio.play().catch(() => {});
-    }, { once: true });
-  
-  
-  </script>
-</body>
-</html>
+<section id="contact"><div class="w ct"><div><h2>Let’s make something good together.</h2>
+<p class="lead">I’m open to software and security roles, full-stack, backend or offensive security, remote or around Faridabad and NCR. I usually reply within a day.</p>
+<a class="em" href="mailto:infosec.mohitsharma@gmail.com">infosec.mohitsharma@gmail.com</a>
+<div class="cta"><a class="bt" href="https://github.com/index-oss" target="_blank" rel="noopener">GitHub</a><a class="bt" href="https://www.youtube.com/@OffSecMohit" target="_blank" rel="noopener">YouTube</a><a class="bt" href="https://medium.com/@mysteries.mohit" target="_blank" rel="noopener">Medium</a><a class="bt" href="assets/Resume.pdf">Resume (PDF)</a></div>
+<form id="cf"><input type="text" name="name" placeholder="Your name" aria-label="Your name" required><input type="email" name="email" placeholder="Your email" aria-label="Your email" required><textarea name="message" rows="4" placeholder="What shall we build?" aria-label="Your message" required></textarea><button type="submit">Send message</button></form></div>
+<div class="rb"><iframe loading="lazy" title="Friendly 3D robot" src="https://my.spline.design/genkubgreetingrobot-Kh7zk0pI81ycZdzxtDAa1thz/"></iframe></div></div></section>
+</main>
+<footer>Made with care in Faridabad by Mohit Sharma. Thanks for stopping by 🌿</footer>
+<audio id="va" preload="none"><source src="welcome-voice.mp3" type="audio/mpeg"></audio>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+emailjs.init("Ag_NHXbM7jvUXK2G6");
+cf.addEventListener("submit",function(e){e.preventDefault();emailjs.sendForm('service_6zd4xfv','template_heikohd',this).then(()=>{alert('Thank you! Your message is on its way.');this.reset()}).catch(()=>alert('Could not send. Please email infosec.mohitsharma@gmail.com'))});
+document.querySelectorAll('.ln a').forEach(a=>a.onclick=()=>ln.classList.remove('o'));
+const T=['Small steps ship big things.','Safe software is kind software.','Every bug fixed is a gift to a stranger.','Curiosity is the best security tool.','Build slowly, breathe deeply, ship happily.'];let ti=0;
+orb.onclick=()=>{ti=(ti+1)%T.length;say.textContent=T[ti];orb.classList.remove('rp');void orb.offsetWidth;orb.classList.add('rp')};
+const P=[['Self-Heal-AI','Security · Automation · AI','make guard','A watchful helper for your servers. It reads the logs, notices anything odd, shuts out bad visitors with firewall rules, restarts what crashed, and pings me on Telegram or Discord.',['Python','Log analysis','Anomaly detection','Telegram/Discord'],'https://github.com/index-oss/Self-Heal-Ai'],
+['Vulnerability Scanner','Guarding the web','guard','Point it at a site you’re allowed to test and it looks for misconfigurations, exposed endpoints and known weak signatures, then writes a clean report a developer can act on.',['Python','Detection','Reporting'],'','Used on authorized targets only'],
+['Exbow-Offensive','Ethical hacking research','guard','One pipeline for the whole routine: gather information, study weaknesses, test with permission, and finish with a tidy writeup. Made for CTFs and authorized work.',['Python','Recon automation','CTF tooling'],'https://github.com/index-oss/Exbow-Offensive','For authorized testing and CTFs only'],
+['ExamCraft','Study helper','make','Upload a question paper and it reads the text, answers to match the marks, shows the maths step by step, and gives you a print-ready A4 PDF. It all runs in your browser.',['Tesseract.js','jsPDF','GPT-4o-mini','Tailwind'],''],
+['Quiz-Master Pro','Live and playful','make','A quiz night with friends where scores update instantly, badges keep things fun, and a wrong answer comes with a friendly AI explanation.',['React','Supabase Realtime','AI explanations'],'https://github.com/index-oss/Quiz-Master_Pro']];
+pb.innerHTML=P.map(p=>`<article data-c="${p[2]}"><span class="k">${p[1]}</span><h3>${p[0]}</h3><p>${p[3]}</p><div class="ch">${p[4].map(c=>`<span>${c}</span>`).join('')}</div>${p[6]?`<span class="wn">${p[6]}</span>`:''}${p[5]?`<a href="${p[5]}" target="_blank" rel="noopener">View the code</a>`:''}</article>`).join('');
+const MEDIUM_URL='https://medium.com/@mysteries.mohit';/* paste your Medium profile link here */
+if(MEDIUM_URL){md.href=MEDIUM_URL;md.target='_blank';md.rel='noopener'}else{md.textContent='Medium link coming soon';md.setAttribute('aria-disabled','true')}
+function theme(t,save){document.body.dataset.t=t;document.documentElement.style.colorScheme=t;document.querySelectorAll('.sw button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===t));if(save)try{localStorage.setItem('theme',t)}catch(e){}}
+document.querySelectorAll('.sw button').forEach(b=>b.onclick=()=>theme(b.dataset.t,1));
+let saved;try{saved=localStorage.getItem('theme')}catch(e){}
+const mq=matchMedia('(prefers-color-scheme:dark)');theme(saved||(mq.matches?'dark':'light'));
+mq.onchange=e=>{if(!saved)theme(e.matches?'dark':'light')};
+document.body.addEventListener('click',()=>{va.paused&&va.play().catch(()=>{})},{once:true});
+</script></body></html>
